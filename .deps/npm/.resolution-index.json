@@ -1,0 +1,10 @@
+{
+  "SimpleStorage.sol": {
+    "__sources__": {
+      "SimpleStorage.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\ncontract SimpleStorage {\r\n\r\n    address public owner;\r\n    uint256 private storedValue;\r\n\r\n    event ValueChanged(uint256 newValue, address changedBy);\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    // Store a value\r\n    function setValue(uint256 _value) public {\r\n        storedValue = _value;\r\n        emit ValueChanged(_value, msg.sender);\r\n    }\r\n\r\n    // Get stored value\r\n    function getValue() public view returns (uint256) {\r\n        return storedValue;\r\n    }\r\n\r\n    // Only owner function\r\n    function onlyOwnerSet(uint256 _value) public {\r\n        require(msg.sender == owner, \"Not owner\");\r\n        storedValue = _value;\r\n        emit ValueChanged(_value, msg.sender);\r\n    }\r\n}",
+        "file": "SimpleStorage.sol"
+      }
+    }
+  }
+}
