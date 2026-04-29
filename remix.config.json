@@ -40,8 +40,11 @@
         "burstAllowance": 4
       },
       "fileWritePermissions": {
-        "mode": "ask",
-        "allowedFiles": []
+        "mode": "allow-specific",
+        "allowedFiles": [
+          "contracts/GreenEnergyToken.sol"
+        ],
+        "lastPrompted": "2026-04-29T04:26:07.711Z"
       }
     },
     "validation": {
